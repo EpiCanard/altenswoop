@@ -47,91 +47,187 @@
     combos {
         compatible = "zmk,combos";
 
-        capslock {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <11 18>;
+        CB_E_ACUTE {
+            bindings = <&kp FR_E_ACUTE>;
+            key-positions = <2 16>;
             layers = <0>;
         };
 
-        dh {
-            bindings = <&m_paren_quote>;
-            key-positions = <12 15>;
+        CB_E_CIRC {
+            bindings = <&FR_E_CIRC>;
+            key-positions = <2 17>;
             layers = <0>;
         };
 
-        gh {
-            bindings = <&kp MINUS>;
-            key-positions = <14 15>;
+        CB_E_GRAVE {
+            bindings = <&kp FR_E_GRAVE>;
+            key-positions = <2 18>;
             layers = <0>;
         };
 
-        s, {
-            bindings = <&m_lt_gt_left>;
-            key-positions = <11 27>;
+        CB_E_TRM {
+            bindings = <&FR_E_TRM>;
+            key-positions = <2 19>;
+            layers = <0>;
+        };
+
+        CB_A_ACUTE {
+            bindings = <&none>;
+            key-positions = <10 16>;
+            layers = <0>;
+        };
+
+        CB_A_CIRC {
+            bindings = <&FR_A_CIRC>;
+            key-positions = <10 17>;
+            layers = <0>;
+        };
+
+        CB_A_GRAVE {
+            bindings = <&kp FR_A_GRAVE>;
+            key-positions = <10 18>;
+            layers = <0>;
+        };
+
+        CB_A_TRM {
+            bindings = <&FR_A_TRM>;
+            key-positions = <10 19>;
+            layers = <0>;
+        };
+
+        CB_O_ACUTE {
+            bindings = <&none>;
+            key-positions = <8 11>;
+            layers = <0>;
+        };
+
+        CB_O_CIRC {
+            bindings = <&FR_O_CIRC>;
+            key-positions = <12 8>;
+            layers = <0>;
+        };
+
+        CB_O_GRAVE {
+            bindings = <&none>;
+            key-positions = <8 13>;
+            layers = <0>;
+        };
+
+        CB_O_TRM {
+            bindings = <&FR_O_TRM>;
+            key-positions = <14 8>;
+            layers = <0>;
+        };
+
+        CB_I_ACUTE {
+            bindings = <&none>;
+            key-positions = <7 11>;
+            layers = <0>;
+        };
+
+        CB_I_CIRC {
+            bindings = <&FR_I_CIRC>;
+            key-positions = <12 7>;
+            layers = <0>;
+        };
+
+        CB_I_GRAVE {
+            bindings = <&none>;
+            key-positions = <13 7>;
+            layers = <0>;
+        };
+
+        CB_I_TRM {
+            bindings = <&FR_I_TRM>;
+            key-positions = <14 7>;
+            layers = <0>;
+        };
+
+        CB_U_ACUTE {
+            bindings = <&none>;
+            key-positions = <6 11>;
+            layers = <0>;
+        };
+
+        CB_U_CIRC {
+            bindings = <&FR_U_CIRC>;
+            key-positions = <6 12>;
+            layers = <0>;
+        };
+
+        CB_U_GRAVE {
+            bindings = <&kp FR_U_GRAVE>;
+            key-positions = <13 6>;
+            layers = <0>;
+        };
+
+        CB_U_TRM {
+            bindings = <&FR_U_TRM>;
+            key-positions = <14 6>;
             layers = <0>;
         };
     };
 
     macros {
-        m_a_grave: m_a_grave {
+        FR_E_CIRC: FR_E_CIRC {
             compatible = "zmk,behavior-macro";
-            label = "M_A_GRAVE";
+            label = "FR_E_CIRC";
             #binding-cells = <0>;
-            bindings = <&kp LA(GRAVE) &kp A>;
+            bindings = <&kp FR_CARET &kp FR_E>;
         };
-        m_a_caret: m_a_caret {
+        FR_A_CIRC: FR_A_CIRC {
             compatible = "zmk,behavior-macro";
-            label = "M_A_CARET";
+            label = "FR_A_CIRC";
             #binding-cells = <0>;
-            bindings = <&kp LA(I) &kp A>;
+            bindings = <&kp FR_CARET &kp FR_A>;
         };
-        m_e_cute: m_e_cute {
+        FR_O_CIRC: FR_O_CIRC {
             compatible = "zmk,behavior-macro";
-            label = "M_E_CUTE";
+            label = "FR_O_CIRC";
             #binding-cells = <0>;
-            bindings = <&kp LA(E) &kp E>;
+            bindings = <&kp FR_CARET &kp FR_O>;
         };
-        m_e_grave: m_e_grave {
+        FR_I_CIRC: FR_I_CIRC {
             compatible = "zmk,behavior-macro";
-            label = "M_E_GRAVE";
+            label = "FR_I_CIRC";
             #binding-cells = <0>;
-            bindings = <&kp LA(GRAVE) &kp E>;
+            bindings = <&kp FR_CARET &kp FR_I>;
         };
-        m_e_caret: m_e_caret {
+        FR_E_TRM: FR_E_TRM {
             compatible = "zmk,behavior-macro";
-            label = "M_E_CARET";
+            label = "FR_E_TRM";
             #binding-cells = <0>;
-            bindings = <&kp LA(I) &kp E>;
+            bindings = <&kp LS(FR_CARET) &kp FR_E>;
         };
-        m_ou: m_ou {
+        FR_A_TRM: FR_A_TRM {
             compatible = "zmk,behavior-macro";
-            label = "M_OU";
+            label = "FR_A_TRM";
             #binding-cells = <0>;
-            bindings = <&kp O &kp LA(GRAVE) &kp U>;
+            bindings = <&kp LS(FR_CARET) &kp FR_A>;
         };
-        m_u_caret: m_u_caret {
+        FR_O_TRM: FR_O_TRM {
             compatible = "zmk,behavior-macro";
-            label = "M_U_CARET";
+            label = "FR_O_TRM";
             #binding-cells = <0>;
-            bindings = <&kp LA(I) &kp U>;
+            bindings = <&kp LS(FR_CARET) &kp FR_O>;
         };
-        m_o_caret: m_o_caret {
+        FR_I_TRM: FR_I_TRM {
             compatible = "zmk,behavior-macro";
-            label = "M_O_CARET";
+            label = "FR_I_TRM";
             #binding-cells = <0>;
-            bindings = <&kp LA(I) &kp O>;
+            bindings = <&kp LS(FR_CARET) &kp FR_I>;
         };
-        m_paren_quote: m_paren_quote {
+        FR_U_CIRC: FR_U_CIRC {
             compatible = "zmk,behavior-macro";
-            label = "M_PAREN_QUOTE";
+            label = "FR_U_CIRC";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS &kp DOUBLE_QUOTES>;
+            bindings = <&kp FR_CARET &kp FR_U>;
         };
-        m_lt_gt_left: m_lt_gt_left {
+        FR_U_TRM: FR_U_TRM {
             compatible = "zmk,behavior-macro";
-            label = "M_LT_GT_LEFT";
+            label = "FR_U_TRM";
             #binding-cells = <0>;
-            bindings = <&kp LESS_THAN &kp GREATER_THAN &kp LEFT>;
+            bindings = <&kp LS(FR_CARET) &kp FR_U>;
         };
     };
 
