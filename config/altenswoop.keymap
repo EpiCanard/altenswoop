@@ -5,10 +5,10 @@
  */
 
 #include <behaviors.dtsi>
+#include "keys_fr.h"
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-#include "keys_fr.h"
 
 / {
     behaviors {
@@ -143,10 +143,10 @@
         base {
             label = "Base";
             bindings = <
-&kp Q         &kp W        &kp E        &kp R      &kp T        &kp Y        &kp U          &kp I             &kp O        &kp P
-&gqt LSHFT A  &gqt LGUI S  &gqt LALT D  &lt 2 F    &kp G        &kp COLON    &lt 2 H        &gqt LALT J       &gqt LGUI K  &gqt LSHFT L
-&gqt LCTRL Z  &kp X        &kp C        &kp V      &kp B        &kp N        &kp M          &kp COMMA         &kp DOT      &kp FSLH
-                           &none        &lt 1 ESC  &kp SPACE    &lt 1 ENTER  &kp BACKSPACE  &kp K_PLAY_PAUSE
+&kp FR_Q         &kp FR_W        &kp FR_E        &kp FR_R    &kp FR_T     &kp FR_Y      &kp FR_U       &kp FR_I          &kp FR_O        &kp FR_P
+&gqt LSHFT FR_A  &gqt LGUI FR_S  &gqt LALT FR_D  &lt 2 FR_F  &kp FR_G     &kp FR_COLON  &lt 2 FR_H     &gqt LALT FR_J    &gqt LGUI FR_K  &gqt LSHFT FR_L
+&gqt LCTRL FR_Z  &kp FR_X        &kp FR_C        &kp FR_V    &kp FR_B     &kp FR_N      &kp FR_M       &kp FR_COMMA      &kp FR_DOT      &kp FR_SLASH
+                                 &none           &lt 1 ESC   &kp SPACE    &lt 1 ENTER   &kp BACKSPACE  &kp K_PLAY_PAUSE
             >;
 
             sensor-bindings =
