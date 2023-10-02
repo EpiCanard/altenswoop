@@ -266,7 +266,7 @@
             label = "FUNCTION";
             bindings = <
 &none   &kp HOME              &kp END               &kp PAGE_UP  &kp PAGE_DOWN    &none   &kp K_PREV    &kp K_NEXT         &kp K_PLAY_PAUSE  &none
-&trans  &m_a_caret            &none                 &trans       &trans           &none   &none         &kp K_SCROLL_DOWN  &kp K_SCROLL_UP   &none
+&trans  &none                 &none                 &trans       &trans           &none   &none         &kp K_SCROLL_DOWN  &kp K_SCROLL_UP   &none
 &none   &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &none        &none            &none   &kp C_VOL_DN  &kp C_VOL_UP       &kp C_MUTE        &none
                               &none                 &trans       &trans           &trans  &trans        &none
             >;
