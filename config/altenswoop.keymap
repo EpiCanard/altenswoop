@@ -43,15 +43,115 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <180>;
         };
+        M_BSPACE: M_BSPACE {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_BSPACE";
+            bindings =
+                <&kp BACKSPACE>,
+                <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
         M_COLON: M_COLON {
             compatible = "zmk,behavior-mod-morph";
             label = "M_COLON";
             bindings =
                 <&kp FR_COLON>,
-                <&kp SEMICOLON>;
+                <&kp FR_SEMICOLON>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
+        };
+        M_QUOTE: M_QUOTE {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_QUOTE";
+            bindings =
+                <&kp FR_SINGLE_QUOTE>,
+                <&kp FR_DOUBLE_QUOTES>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+        M_BSLASH: M_BSLASH {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_BSLASH";
+            bindings =
+                <&kp FR_BACKSLASH>,
+                <&kp FR_PIPE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+        M_COMMA: M_COMMA {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_COMMA";
+            bindings =
+                <&kp FR_COMMA>,
+                <&kp FR_LESS_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+        M_DOT: M_DOT {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_DOT";
+            bindings =
+                <&kp FR_DOT>,
+                <&kp FR_GREATER_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+        M_SLASH: M_SLASH {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_SLASH";
+            bindings =
+                <&kp FR_SLASH>,
+                <&kp FR_QUESTION>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+        M_MINUS: M_MINUS {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_MINUS";
+            bindings =
+                <&kp FR_MINUS>,
+                <&kp FR_UNDERSCORE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+        M_GRAVE: M_GRAVE {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_GRAVE";
+            bindings =
+                <&kp FR_GRAVE>,
+                <&kp FR_TILDE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+        M_SPACE: M_SPACE {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_SPACE";
+            bindings =
+                <&kp SPACE>,
+                <&kp TAB>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+        M_GUI_B: M_GUI_B {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_GUI_B";
+            bindings =
+                <&kp FR_B>,
+                <&kp LC(FR_B)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
         };
     };
 
@@ -248,10 +348,10 @@
         base {
             label = "Base";
             bindings = <
-&kp FR_Q        &kp FR_W       &kp FR_E       &kp FR_R    &kp FR_T     &kp FR_Y     &kp FR_U       &kp FR_I       &kp FR_O       &kp FR_P
-&mt LSHFT FR_A  &mt LGUI FR_S  &mt LALT FR_D  &lt 2 FR_F  &kp FR_G     &M_COLON     &lt 2 FR_H     &mt LALT FR_J  &mt LGUI FR_K  &mt LSHFT FR_L
-&mt LCTRL FR_Z  &kp FR_X       &kp FR_C       &lt 3 FR_V  &kp FR_B     &kp FR_N     &kp FR_M       &kp FR_COMMA   &kp FR_DOT     &mt LCTRL FR_SLASH
-                               &none          &lt 1 ESC   &kp SPACE    &lt 1 ENTER  &kp BACKSPACE  &none
+&kp FR_Q        &kp FR_W       &kp FR_E       &kp FR_R    &kp FR_T    &kp FR_Y     &kp FR_U    &kp FR_I       &kp FR_O       &mt LEFT_CONTROL FR_P
+&mt LSHFT FR_A  &mt LGUI FR_S  &mt LALT FR_D  &lt 2 FR_F  &kp FR_G    &M_COLON     &lt 2 FR_H  &mt LALT FR_J  &mt LGUI FR_K  &mt LSHFT FR_L
+&mt LCTRL FR_Z  &kp FR_X       &kp FR_C       &lt 3 FR_V  &M_GUI_B    &kp FR_N     &kp FR_M    &M_COMMA       &M_DOT         &M_SLASH
+                               &none          &lt 1 ESC   &M_SPACE    &lt 1 ENTER  &M_BSPACE   &none
             >;
 
             sensor-bindings =
@@ -262,10 +362,10 @@
         symbols {
             label = "SYMBOLS";
             bindings = <
-&none           &kp FR_AT      &kp FR_LEFT_BRACE        &kp FR_RIGHT_BRACE        &kp FR_PIPE     &kp FR_BACKSLASH  &kp FR_SINGLE_QUOTE  &kp FR_EQUAL  &trans  &kp FR_ASTRK
-&kp LSHIFT      &kp FR_DOLLAR  &kp FR_LEFT_PARENTHESIS  &kp FR_RIGHT_PARENTHESIS  &kp FR_HASH     &trans            &kp LEFT             &kp DOWN      &kp UP  &kp RIGHT
-&kp FR_PERCENT  &kp FR_CARET   &kp FR_LEFT_BRACKET      &kp FR_RIGHT_BRACKET      &kp FR_TILDE    &kp FR_AMPS       &kp FR_MINUS         &kp FR_GRAVE  &trans  &trans
-                               &none                    &trans                    &trans          &trans            &trans               &none
+&none           &kp FR_AT      &kp FR_LEFT_BRACE        &kp FR_RIGHT_BRACE        &kp FR_PIPE     &kp FR_BACKSLASH  &M_QUOTE  &kp FR_EQUAL  &trans  &kp FR_ASTRK
+&kp LSHIFT      &kp FR_DOLLAR  &kp FR_LEFT_PARENTHESIS  &kp FR_RIGHT_PARENTHESIS  &kp FR_HASH     &trans            &kp LEFT  &kp DOWN      &kp UP  &kp RIGHT
+&kp FR_PERCENT  &kp FR_CARET   &kp FR_LEFT_BRACKET      &kp FR_RIGHT_BRACKET      &kp FR_TILDE    &kp FR_AMPS       &M_MINUS  &kp FR_GRAVE  &trans  &trans
+                               &none                    &trans                    &trans          &trans            &trans    &none
             >;
 
             sensor-bindings =
