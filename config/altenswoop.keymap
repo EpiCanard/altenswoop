@@ -43,6 +43,16 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <180>;
         };
+        M_COLON: M_COLON {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_COLON";
+            bindings =
+                <&kp FR_COLON>,
+                <&kp SEMICOLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     combos {
@@ -238,10 +248,10 @@
         base {
             label = "Base";
             bindings = <
-&kp FR_Q        &kp FR_W       &kp FR_E       &kp FR_R    &kp FR_T     &kp FR_Y      &kp FR_U       &kp FR_I       &kp FR_O       &kp FR_P
-&mt LSHFT FR_A  &mt LGUI FR_S  &mt LALT FR_D  &lt 2 FR_F  &kp FR_G     &kp FR_COLON  &lt 2 FR_H     &mt LALT FR_J  &mt LGUI FR_K  &mt LSHFT FR_L
-&mt LCTRL FR_Z  &kp FR_X       &kp FR_C       &lt 3 FR_V  &kp FR_B     &kp FR_N      &kp FR_M       &kp FR_COMMA   &kp FR_DOT     &mt LCTRL FR_SLASH
-                               &none          &lt 1 ESC   &kp SPACE    &lt 1 ENTER   &kp BACKSPACE  &none
+&kp FR_Q        &kp FR_W       &kp FR_E       &kp FR_R    &kp FR_T     &kp FR_Y     &kp FR_U       &kp FR_I       &kp FR_O       &kp FR_P
+&mt LSHFT FR_A  &mt LGUI FR_S  &mt LALT FR_D  &lt 2 FR_F  &kp FR_G     &M_COLON     &lt 2 FR_H     &mt LALT FR_J  &mt LGUI FR_K  &mt LSHFT FR_L
+&mt LCTRL FR_Z  &kp FR_X       &kp FR_C       &lt 3 FR_V  &kp FR_B     &kp FR_N     &kp FR_M       &kp FR_COMMA   &kp FR_DOT     &mt LCTRL FR_SLASH
+                               &none          &lt 1 ESC   &kp SPACE    &lt 1 ENTER  &kp BACKSPACE  &none
             >;
 
             sensor-bindings =
