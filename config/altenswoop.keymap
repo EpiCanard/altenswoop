@@ -368,10 +368,10 @@
         symbols {
             label = "SYMBOLS";
             bindings = <
-&none           &kp FR_AT      &kp FR_LEFT_BRACE        &kp FR_RIGHT_BRACE        &kp FR_PIPE     &kp FR_BACKSLASH  &M_QUOTE  &kp FR_EQUAL  &trans  &kp FR_ASTRK
-&kp LSHIFT      &kp FR_DOLLAR  &kp FR_LEFT_PARENTHESIS  &kp FR_RIGHT_PARENTHESIS  &kp FR_HASH     &trans            &kp LEFT  &kp DOWN      &kp UP  &kp RIGHT
-&kp FR_PERCENT  &kp FR_CARET   &kp FR_LEFT_BRACKET      &kp FR_RIGHT_BRACKET      &kp FR_TILDE    &kp FR_AMPS       &M_MINUS  &kp FR_GRAVE  &trans  &trans
-                               &none                    &trans                    &trans          &trans            &trans    &none
+&kp FR_EXCLAMATION  &kp FR_AT      &kp FR_LEFT_BRACE        &kp FR_RIGHT_BRACE        &kp FR_PIPE     &kp FR_BACKSLASH  &M_QUOTE  &kp FR_EQUAL  &trans  &kp FR_ASTRK
+&kp LSHIFT          &kp FR_DOLLAR  &kp FR_LEFT_PARENTHESIS  &kp FR_RIGHT_PARENTHESIS  &kp FR_HASH     &trans            &kp LEFT  &kp DOWN      &kp UP  &kp RIGHT
+&kp FR_PERCENT      &kp FR_CARET   &kp FR_LEFT_BRACKET      &kp FR_RIGHT_BRACKET      &kp FR_TILDE    &kp FR_AMPS       &M_MINUS  &kp FR_GRAVE  &trans  &trans
+                                   &none                    &trans                    &trans          &trans            &trans    &none
             >;
 
             sensor-bindings =
