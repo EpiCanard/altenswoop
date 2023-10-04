@@ -277,6 +277,12 @@
             key-positions = <14 6>;
             layers = <0>;
         };
+
+        CB_C_CED {
+            bindings = <&kp FR_C_CEDILLA>;
+            key-positions = <16 22>;
+            layers = <0>;
+        };
     };
 
     macros {
