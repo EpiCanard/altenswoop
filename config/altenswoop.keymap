@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <behaviors.dtsi>
 #include "keys_fr.h"
 #include <dt-bindings/zmk/mouse.h>
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
@@ -158,6 +158,51 @@
             label = "S_BT";
             #sensor-binding-cells = <0>;
             bindings = <&bt BT_NXT>, <&bt BT_PRV>;
+        };
+
+        M_BT_0: M_BT_0 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_BT_0";
+            bindings = <&kp FR_N0>, <&bt BT_SEL 0>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        M_BT_1: M_BT_1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_BT_1";
+            bindings = <&kp FR_N1>, <&bt BT_SEL 1>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        M_BT_2: M_BT_2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_BT_2";
+            bindings = <&kp FR_N2>, <&bt BT_SEL 2>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        M_BT_3: M_BT_3 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_BT_3";
+            bindings = <&kp FR_N3>, <&bt BT_SEL 3>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        M_BT_4: M_BT_4 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_BT_4";
+            bindings = <&kp FR_N4>, <&bt BT_SEL 4>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -424,10 +469,10 @@
 
         numpad {
             bindings = <
-&none        &none  &none       &none       &none     &none      &kp FR_N7  &kp FR_N8   &kp FR_N9  &none
-&none        &none  &bt BT_PRV  &bt BT_NXT  &none     &none      &kp FR_N4  &kp FR_N5   &kp FR_N6  &none
-&bootloader  &none  &none       &none       &none     &kp FR_N0  &kp FR_N1  &kp FR_N2   &kp FR_N3  &bootloader
-                    &none       &none       &trans    &trans     &trans     &bt BT_CLR
+&none           &none  &none       &none       &none     &none    &kp FR_N7  &kp FR_N8   &kp FR_N9  &none
+&kp LEFT_SHIFT  &none  &bt BT_PRV  &bt BT_NXT  &none     &none    &M_BT_4    &kp FR_N5   &kp FR_N6  &none
+&bootloader     &none  &none       &none       &none     &M_BT_0  &M_BT_1    &M_BT_2     &M_BT_3    &bootloader
+                       &none       &none       &trans    &trans   &trans     &bt BT_CLR
             >;
 
             label = "NUM";
