@@ -3,10 +3,15 @@ manifest:
     # zmk official
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    # testing mouse keys
+    - name: mousekeys
+      url-base: https://github.com/petejohanson
+    - name: cak
+      url-base: https://github.com/caksoylar
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: cak
+      revision: caksoylar/experimental
       import: app/west.yml
   self:
     path: config

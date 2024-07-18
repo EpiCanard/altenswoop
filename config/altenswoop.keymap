@@ -160,6 +160,13 @@
             bindings = <&bt BT_NXT>, <&bt BT_PRV>;
         };
 
+        S_SCROLL: S_SCROLL {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "S_SCROLL";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        };
+
         M_BT_0: M_BT_0 {
             compatible = "zmk,behavior-mod-morph";
             label = "M_BT_0";
@@ -456,14 +463,14 @@
         function {
             label = "FUNCTION";
             bindings = <
-&none   &kp HOME              &kp END               &kp PAGE_UP  &kp PAGE_DOWN    &none     &kp K_PREV    &kp K_NEXT         &kp K_PLAY_PAUSE  &none
-&trans  &none                 &none                 &trans       &trans           &none     &none         &kp K_SCROLL_DOWN  &kp K_SCROLL_UP   &none
-&none   &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &none        &none            &none     &kp C_VOL_DN  &kp C_VOL_UP       &kp C_MUTE        &none
-                              &none                 &trans       &trans           &mkp MB4  &mkp MB5      &none
+&none   &kp HOME              &kp END               &kp PAGE_UP  &kp PAGE_DOWN    &none     &kp K_PREV       &kp K_NEXT         &kp K_PLAY_PAUSE  &none
+&trans  &none                 &none                 &trans       &trans           &none     &mmv MOVE_LEFT   &mmv MOVE_DOWN     &mmv MOVE_UP      &mmv MOVE_RIGHT
+&none   &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &none        &none            &none     &kp C_VOL_DN     &kp C_VOL_UP       &kp C_MUTE        &none
+                              &none                 &trans       &trans           &mkp MB4  &mkp MB5         &none
             >;
 
             sensor-bindings =
-                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>,
+                <&S_SCROLL>,
                 <&S_TMUX>;
         };
 
