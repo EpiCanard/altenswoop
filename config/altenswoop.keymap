@@ -10,6 +10,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 140
+
 &mt {
     require-prior-idle-ms = <100>;
     flavor = "tap-preferred";
@@ -165,6 +167,7 @@
             label = "S_SCROLL";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            tap-ms = <20>;
         };
 
         M_BT_0: M_BT_0 {
