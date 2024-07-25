@@ -11,6 +11,13 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 140
+#define ZMK_MOUSE_FAST_MOVE_VAL 1200
+
+
+#define MOVE_FAST_UP MOVE_Y(-ZMK_MOUSE_FAST_MOVE_VAL)
+#define MOVE_FAST_DOWN MOVE_Y(ZMK_MOUSE_FAST_MOVE_VAL)
+#define MOVE_FAST_LEFT MOVE_X(-ZMK_MOUSE_FAST_MOVE_VAL)
+#define MOVE_FAST_RIGHT MOVE_X(ZMK_MOUSE_FAST_MOVE_VAL)
 
 &mt {
     require-prior-idle-ms = <100>;
@@ -146,6 +153,42 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
+        };
+
+        M_MOVE_LEFT: M_MOVE_LEFT {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_MOVE_LEFT";
+            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_FAST_LEFT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        M_MOVE_DOWN: M_MOVE_DOWN {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_MOVE_DOWN";
+            bindings = <&mmv MOVE_DOWN>, <&mmv MOVE_FAST_DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        M_MOVE_UP: M_MOVE_UP {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_MOVE_UP";
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_FAST_UP>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        M_MOVE_RIGHT: M_MOVE_RIGHT {
+            compatible = "zmk,behavior-mod-morph";
+            label = "M_MOVE_RIGHT";
+            bindings = <&mmv MOVE_RIGHT>, <&mmv MOVE_FAST_RIGHT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
         };
 
         S_TMUX: S_TMUX {
@@ -467,7 +510,7 @@
             label = "FUNCTION";
             bindings = <
 &none   &kp HOME              &kp END               &kp PAGE_UP  &kp PAGE_DOWN    &none              &kp K_PREV       &kp K_NEXT         &kp K_PLAY_PAUSE  &none
-&trans  &none                 &none                 &trans       &trans           &msc SCRL_UP       &mmv MOVE_LEFT   &mmv MOVE_DOWN     &mmv MOVE_UP      &mmv MOVE_RIGHT
+&trans  &none                 &none                 &trans       &trans           &msc SCRL_UP       &M_MOVE_LEFT   &M_MOVE_DOWN     &M_MOVE_UP      &M_MOVE_RIGHT
 &none   &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &none        &none            &msc SCRL_DOWN     &kp C_VOL_DN     &kp C_VOL_UP       &kp C_MUTE        &none
                               &none                 &mkp MB2     &mkp MB1         &mkp MB4           &mkp MB5         &none
             >;
